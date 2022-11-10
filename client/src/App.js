@@ -1,10 +1,15 @@
 import './App.css';
+import routes from 'routes';
+import {useRoutes} from 'react-router-dom'
 
 function App() {
+  const showRoutes = useRoutes(routes);
+
   return (
-    <div className="App">
-     
-    </div>
+    <>
+
+    {showRoutes}
+    </>
   );
 }
 
