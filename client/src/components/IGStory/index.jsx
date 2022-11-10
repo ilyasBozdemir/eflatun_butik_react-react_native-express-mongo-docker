@@ -1,7 +1,7 @@
 import React from 'react'
 import Stories from 'react-insta-stories';
 
-function IGStory() {
+function index() {
  
   return (
     <>
@@ -10,4 +10,4 @@ function IGStory() {
   )
 }
 
-export default IGStory
+export default index

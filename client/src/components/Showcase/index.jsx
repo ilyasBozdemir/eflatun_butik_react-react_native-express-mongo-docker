@@ -1,9 +1,9 @@
 import React from 'react'
 
-function Showcase() {
+function index() {
   return (
     <div>Showcase</div>
   )
 }
 
-export default Showcase
+export default index

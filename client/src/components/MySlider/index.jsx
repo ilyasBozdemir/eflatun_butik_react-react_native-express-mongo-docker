@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
 import { Stack } from "@chakra-ui/react";
-export default class SimpleSlider extends Component {
+export default class index extends Component {
   render() {
     const settings = {
       dots: true,
