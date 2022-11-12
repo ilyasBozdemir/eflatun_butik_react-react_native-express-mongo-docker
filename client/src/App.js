@@ -1,12 +1,12 @@
 import "./App.css";
-import { BrowserRouter, Routes, Route, useColorMode } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Basket from "./pages/Basket";
 import Contact from "./pages/Contact";
 import Page404 from "./pages/Page404";
 
 function App() {
-  const { colorMode, toggleColorMode } = useColorMode();
+
   return (
     <>
       <BrowserRouter>

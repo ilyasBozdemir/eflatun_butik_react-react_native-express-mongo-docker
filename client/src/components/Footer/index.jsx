@@ -9,9 +9,7 @@ import {
   VisuallyHidden,
   chakra,
   useColorModeValue,
-  Input,
-  Flex,
-  IconButton,
+  Flex
 } from "@chakra-ui/react";
 import { FaInstagram } from "react-icons/fa";
 const ListHeader = ({ children }) => {
@@ -51,6 +49,7 @@ function getFullYear() {
 }
 
 export default function LargeWithAppLinksAndSocial() {
+
   return React.createElement(
     Box,
     {
@@ -135,8 +134,11 @@ export default function LargeWithAppLinksAndSocial() {
           align: { md: "center" },
         },
         React.createElement(
-          Text,
-          { textAlign: "center" },
+          Flex,
+          { 
+            textAlign: 'center',
+          justifyContent:'flex-end'
+         },
           `\u00A9 ${getFullYear()}  Eflatun Butik. Tüm Hakları Saklıdır.`
         )
       )

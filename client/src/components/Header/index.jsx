@@ -13,30 +13,37 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
-  useColorMode as UseColorMode
+  useColorMode as UseColorMode,
+  Switch 
 } from "@chakra-ui/react";
 
 import { FiSearch } from "react-icons/fi";
 import { AiOutlineUser } from "react-icons/ai";
 import { GrFavorite } from "react-icons/gr";
-import { AiOutlineShoppingCart } from "react-icons/ai"; //
+import { AiOutlineShoppingCart } from "react-icons/ai"; //BsMoon
+import { BsMoon, BsSun } from "react-icons/bs"; //BsMoon
 
 import styles from "./index.module.css";
 import { Link } from "react-router-dom";
 
-
 function index() {
-
   const { colorMode, toggleColorMode } = UseColorMode();
 
   return (
     <>
+   
       <Flex
-       direction={["row"]}
-        justifyContent={"flex-end"}
-         color='gray.500'
-         fontSize={12}
-         >
+        direction={["row"]}
+        justifyContent={"space-between"}
+        alignItems={'center'}
+        color="gray.500"
+        fontSize={12}
+      > 
+      <Box p="1">
+          <Link href="#">user@domain.com</Link>
+        </Box>
+      <Spacer />
+
         <Box p="1">
           <Link href="#">Siparişim Nerede</Link>
         </Box>
@@ -49,11 +56,15 @@ function index() {
         <Box p="1">
           <Link href="#">Bize Ulaşın</Link>
         </Box>
-        <Box>
-        <Button onClick={toggleColorMode}>
-        Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
-      </Button>
-        </Box>
+
+          <IconButton
+            onClick={toggleColorMode}
+            ml={2}
+            width={50}
+            aria-label='Toggle light dark mode'
+            icon={colorMode === "light" ? <BsMoon /> : <BsSun />}
+            size="sm"
+          />
 
       </Flex>
 
@@ -77,16 +88,16 @@ function index() {
 
         <Spacer />
 
-        <Flex bgColor={"#ddd"} borderRadius={'50px 50px 50px 50px'}>
+        <Flex bgColor={"#ddd"} borderRadius={"50px 50px 50px 50px"}>
           <Input
-            variant='none'
+            variant="none"
             placeholder="Aradığınız ürün, kategori veya markayı yazınız"
             maxLength={50}
             width={500}
-            size='md'
-            textAlign={'center'}
-            bgColor={'#ddd'}
-            color={'#000'}
+            size="md"
+            textAlign={"center"}
+            bgColor={"#ddd"}
+            color={"#000"}
           />
 
           <IconButton
@@ -107,7 +118,7 @@ function index() {
             <MenuButton as={Button}>
               <IconButton
                 width={50}
-                aria-label='product favorite'
+                aria-label="product favorite"
                 icon={<AiOutlineUser />}
                 size="md"
               ></IconButton>
