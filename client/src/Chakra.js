@@ -3,11 +3,11 @@ import {
   ColorModeScript,
   cookieStorageManagerSSR,
   localStorageManager,
-} from '@chakra-ui/react';
+} from "@chakra-ui/react";
 
+import { RtlProvider } from "@/components/rtl-provider";
 
 import theme from "./theme";
-
 
 export function Chakra({ cookies, startAppName }) {
   const colorModeManager =
@@ -19,8 +19,8 @@ export function Chakra({ cookies, startAppName }) {
     <ChakraProvider colorModeManager={colorModeManager} theme={theme}>
       <ColorModeScript initialColorMode={theme.config.initialColorMode} />
 
-      {startAppName}
-
+      <RtlProvider>{startAppName}</RtlProvider>
+      
     </ChakraProvider>
   );
 }

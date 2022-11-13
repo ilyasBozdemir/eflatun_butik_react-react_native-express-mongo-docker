@@ -97,6 +97,7 @@ function index() {
                   fontSize="lg"
                 >
                   Şimdi keşfedin
+                  
                 </Link>
                 <Icon
                   color={UseColorModeValue("red.500", "red.300")}
