@@ -4,7 +4,7 @@ import { Text, Box, Button, ButtonGroup } from "@chakra-ui/react";
 function index() {
   return (
     <>
-      <Box display="flex" alignItems="center" justifyContent="space-around">
+      <Box mt={4} display="flex" alignItems="center" justifyContent="space-around">
 
           <Button>
             <Text
@@ -14,7 +14,6 @@ function index() {
             >
               Sepete En Çok Eklenenler
             </Text>
-
           </Button>
           <Button>
             <Text
