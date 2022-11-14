@@ -9,10 +9,11 @@ import {
   Link,
   Skeleton,
   Stack,
-  Text,
   useColorModeValue as UseColorModeValue,
 } from "@chakra-ui/react";
 import { FaArrowRight } from "react-icons/fa";
+
+import Logo from "../../Logo";
 
 function index() {
   return (
@@ -80,11 +81,8 @@ function index() {
                   lg: "4",
                 }}
               >
-                <Heading
-                  size="xl"
-                  color={UseColorModeValue("red.500", "red.300")}
-                >
-                  EflatunButik
+                <Heading size="xl">
+                  <Logo />
                 </Heading>
                 <Heading size="xl" fontWeight="normal">
                   Gardırobunuzu yenileyin
@@ -97,7 +95,6 @@ function index() {
                   fontSize="lg"
                 >
                   Şimdi keşfedin
-                  
                 </Link>
                 <Icon
                   color={UseColorModeValue("red.500", "red.300")}

@@ -8,7 +8,6 @@ import {
   Button,
   Input,
   IconButton,
-  Text,
   Menu,
   MenuButton,
   MenuList,
@@ -16,13 +15,14 @@ import {
   useColorModeValue as UseColorModeValue,
 } from "@chakra-ui/react";
 
+import Logo from '../Logo'
+
 import { FiSearch } from "react-icons/fi";
 import { AiOutlineUser } from "react-icons/ai";
 import { GrFavorite } from "react-icons/gr";
 import { AiOutlineShoppingCart } from "react-icons/ai"; //BsMoon
-import { BsMoon, BsSun } from "react-icons/bs"; //BsMoon
 
-import styles from "./index.module.css";
+
 import { Link } from "react-router-dom";
 
 
@@ -34,16 +34,7 @@ function HeaderBrand() {
         <Box p="2">
           <Heading size="md">
             <Link href="/">
-              <span id={styles.brand}>
-                <Text
-                  bgGradient="linear(to-l, #7928CA, #FF0080)"
-                  bgClip="text"
-                  fontSize="3xl"
-                  fontWeight="extrabold"
-                >
-                  EflatunButik
-                </Text>
-              </span>
+              <Logo/>
             </Link>
           </Heading>
         </Box>

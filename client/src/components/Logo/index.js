@@ -1,9 +1,25 @@
-import React from 'react'
+import React from "react";
+import { Box, Heading, Text } from "@chakra-ui/react";
+
+import styles from "./index.module.css";
 
 function index() {
   return (
-    <div>index</div>
-  )
+    <>
+      <Box>
+        <span id={styles.brand}>
+          <Text
+            bgGradient="linear(to-l, #7928CA, #FF0080)"
+            bgClip="text"
+            fontSize="3xl"
+            fontWeight="extrabold"
+          >
+            EflatunButik
+          </Text>
+        </span>
+      </Box>
+    </>
+  );
 }
 
-export default index
+export default index;
