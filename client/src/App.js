@@ -1,7 +1,7 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 
-import { Flex } from '@chakra-ui/react'
+import { Container } from '@chakra-ui/react'
 
 import Banner from "./components/Banner";
 import Header from "./components/Header";
@@ -13,7 +13,7 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <Flex direction="column" flex="1">
+    <Container >
       <Banner />
       <Header />
       <Routes>
@@ -26,7 +26,7 @@ function App() {
       </Routes> 
 
        <Footer />
-    </Flex>
+    </Container>
   );
 }
 
