@@ -8,7 +8,7 @@ function index() {
 
           <Button>
             <Text
-              bgGradient="linear(to-l, #f64f59, #ACB6E5)"
+              bgGradient="linear(to-l, #7928CA, #FF0080)"
               bgClip="text"
               fontSize="xl"
             >
@@ -17,7 +17,7 @@ function index() {
           </Button>
           <Button>
             <Text
-              bgGradient="linear(to-l, #59C173, #a17fe0 ,#f64f59)"
+              bgGradient="linear(to-l, #7928CA, #FF0080)"
               bgClip="text"
               fontSize="xl"
             >
@@ -27,7 +27,7 @@ function index() {
           </Button>
           <Button>
             <Text
-              bgGradient="linear(to-l, #12c2e9 , #c471ed , #f64f59)"
+              bgGradient="linear(to-l, #7928CA, #FF0080)"
               bgClip="text"
               fontSize="xl"
             >

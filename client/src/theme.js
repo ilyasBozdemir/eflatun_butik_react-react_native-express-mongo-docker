@@ -4,21 +4,16 @@ import
 } 
 from "@chakra-ui/react";
 
-
-
 const theme = extendTheme({
   config: {
     initialColorMode: 'system',
     useSystemColorMode: false,
+    cssVarPrefix: 'eflatun-butik'
   },
   colors: {
     transparent: "transparent",
     black: "#000",
     white: "#fff",
-    gray: {
-      50: "#f7fafc",
-      900: "#1a202c",
-    },
   },
   fonts: {
     body: "system-ui, sans-serif",

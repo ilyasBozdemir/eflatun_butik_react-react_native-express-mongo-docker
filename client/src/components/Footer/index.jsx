@@ -1,147 +1,195 @@
 import React from "react";
+import Logo from "../../components/Logo";
+import { Link } from "react-router-dom";
 import {
-  Box,
+  Button,
+  ButtonGroup,
   Container,
+  Divider,
+  IconButton,
+  Input,
   Stack,
-  SimpleGrid,
   Text,
-  Link,
-  VisuallyHidden,
-  chakra,
-  useColorModeValue,
-  Flex
+  Heading,
 } from "@chakra-ui/react";
-import { FaInstagram } from "react-icons/fa";
-const ListHeader = ({ children }) => {
-  return React.createElement(
-    Text,
-    { fontWeight: "500", fontSize: "lg", mb: 2 },
-    children
-  );
-};
-const SocialButton = ({ children, label, href }) => {
-  return React.createElement(
-    chakra.button,
-    {
-      bg: useColorModeValue("blackAlpha.100", "whiteAlpha.100"),
-      rounded: "full",
-      w: 8,
-      h: 8,
-      cursor: "pointer",
-      as: "a",
-      href: href,
-      display: "inline-flex",
-      alignItems: "center",
-      justifyContent: "center",
-      transition: "background 0.3s ease",
-      _hover: {
-        bg: useColorModeValue("blackAlpha.200", "whiteAlpha.200"),
-      },
-    },
-    React.createElement(VisuallyHidden, {}, label),
-    children
-  );
-};
 
-function getFullYear() {
-  const d = new Date();
-  return d.getFullYear();
+import {
+  FaGithub,
+  FaLinkedin,
+  FaTwitter,
+  FaInstagram,
+  FaFacebook,
+} from "react-icons/fa";
+
+function index() {
+  return (
+    <Container
+      as="footer"
+      role="contentinfo"
+      maxW={"container.lg"}
+      bg={"black.300"}
+      color={"black"}
+      marginTop={10}
+    >
+      <Divider   marginBottom={3}/>
+      <Stack
+        spacing="8"
+        direction={{
+          base: "column",
+          md: "row",
+        }}
+        justify="space-between"
+        py={{
+          base: "12",
+          md: "16",
+        }}
+      >
+        <Stack
+          spacing={{
+            base: "6",
+            md: "8",
+          }}
+          align="center"
+          justifyContent={'center'}
+          ml={10}
+          mr={10}
+        >
+          <Logo />
+          <Text color="muted.200">En Trend Kadın Giyim</Text>
+
+          <ButtonGroup variant="ghost">
+            <Link href="/" isExternal>
+              <IconButton
+                aria-label="Facebook"
+                icon={<FaFacebook fontSize="1.25rem" />}
+                _hover={{ bg: "blue.500", color: " white" }}
+              />
+            </Link>
+            <Link href="/" isExternal>
+              <IconButton
+                as="button"
+                aria-label="Instagram"
+                icon={<FaInstagram fontSize="1.25rem" />}
+                _hover={{ bg: "pink.500", color: " white" }}
+              />
+            </Link>
+          </ButtonGroup>
+        </Stack>
+
+        <Stack
+          direction={{
+            base: "column-reverse",
+            md: "column",
+            lg: "row",
+          }}
+          spacing={{
+            base: "12",
+            md: "8",
+          }}
+        >
+          <Stack direction="row" spacing="8">
+            <Stack spacing="4" minW="36" flex="1">
+              <Text fontSize="sm" fontWeight="semibold" color="subtle">
+                Product
+              </Text>
+              <Stack spacing="3" shouldWrapChildren>
+                <Button variant="link" color="blue.400" >How it works</Button>
+                <Button variant="link" color="blue.400" >Pricing</Button>
+                <Button variant="link" color="blue.400">Use Cases</Button>
+              </Stack>
+            </Stack>
+            <Stack spacing="4" minW="36" flex="1">
+              <Text fontSize="sm" fontWeight="semibold" color="subtle">
+                Legal
+              </Text>
+              <Stack spacing="3" shouldWrapChildren>
+                <Button variant="link" color="blue.400">Privacy</Button>
+                <Button variant="link" color="blue.400">Terms</Button>
+                <Button variant="link" color="blue.400">License</Button>
+              </Stack>
+            </Stack>
+          </Stack>
+          <Stack spacing="4">
+
+            <Text fontSize="sm" fontWeight="semibold" color="subtle">
+
+            Bizden Haberler
+            </Text>
+
+            <Text as="div">Kampanya ve Fırsatlarımızdan İlk Siz Haberdar Olun!</Text>
+
+            <Stack
+              spacing="4"
+              direction={{
+                base: "column",
+                sm: "row",
+              }}
+              maxW={{
+                lg: "360px",
+              }}
+            >
+              <Input
+                placeholder="e-mail adresini giriniz"
+                type="email"
+                required
+              />
+              <Button color="blue.400" type="submit" flexShrink={0}>
+                Abone ol
+              </Button>
+            </Stack>
+          </Stack>
+        </Stack>
+      </Stack>
+      <Divider />
+      <Stack
+        pt="8"
+        justify="flex-start"
+        direction={{
+          base: "column-reverse",
+          md: "row",
+        }}
+        align="center"
+      >
+        <Text fontSize="sm" color="subtle">
+          &copy; {new Date().getFullYear()} Eflatun Butik. Tüm Hakları
+          Saklıdır..
+        </Text>
+      </Stack>
+
+      <Stack
+        justify="flex-end"
+        direction={{
+          base: "column-reverse",
+          md: "row",
+        }}
+        align="center"
+      >
+        <Text textAlign="center" fontSize="sm" color="subtle">
+          Bu websitesi İlyas Bozdemir tarafından geliştirilmiştir.
+        </Text>
+        <ButtonGroup variant="ghost">
+          <Link href="/" isExternal>
+            <IconButton
+              aria-label="Github"
+              icon={<FaGithub fontSize="1.25rem" />}
+            />
+          </Link>
+          <Link href="/" isExternal>
+            <IconButton
+              aria-label="Instagram"
+              icon={<FaInstagram fontSize="1.25rem" />}
+            />
+          </Link>
+          <Link href="/" isExternal>
+            <IconButton
+              aria-label="Linkedin"
+              icon={<FaLinkedin fontSize="1.25rem" />}
+            />
+          </Link>
+        </ButtonGroup>
+      </Stack>
+    </Container>
+  );
 }
 
-export default function LargeWithAppLinksAndSocial() {
-
-  return React.createElement(
-    Box,
-    {
-      bg: useColorModeValue("gray.50", "gray.900"),
-      color: useColorModeValue("gray.700", "gray.200"),
-    },
-    React.createElement(
-      Container,
-      { as: Stack, maxW: "6xl", py: 10 },
-      React.createElement(
-        SimpleGrid,
-        { columns: { base: 1, sm: 2, md: 4 }, spacing: 8 },
-        React.createElement(
-          Stack,
-          { align: "flex-start" },
-          React.createElement(ListHeader, {}, "Kurumsal"),
-          React.createElement(Link, { href: "#" }, "Hakkımızda"),
-          React.createElement(Link, { href: "#" }, "Kariyer"),
-          React.createElement(Link, { href: "#" }, "Bize Ulaşın"),
-          React.createElement(
-            Stack,
-            { direction: "row", spacing: 6 },
-
-            React.createElement(
-              SocialButton,
-              {
-                label: "Instagram",
-                href: "https://www.instagram.com/eflatun.butik/",
-              },
-              React.createElement(FaInstagram, {})
-            )
-          )
-        ),
-
-        React.createElement(
-          Stack,
-          { align: "flex-start" },
-          React.createElement(ListHeader, {}, "Hesabım"),
-          React.createElement(Link, { href: "#" }, "Hesabım"),
-          React.createElement(Link, { href: "#" }, "Siparişlerim"),
-          React.createElement(Link, { href: "#" }, "Adres Bilgilerim"),
-          React.createElement(Link, { href: "#" }, "Alışveriş Sepetim"),
-          React.createElement(Link, { href: "#" }, "Favorilerim")
-        ),
-        React.createElement(
-          Stack,
-          { align: "flex-start" },
-          React.createElement(ListHeader, {}, "Sözleşmeler"),
-          React.createElement(Link, { href: "#" }, "Çerez Politikası"),
-          React.createElement(Link, { href: "#" }, "Gizlilik Politikası"),
-          React.createElement(Link, { href: "#" }, "Kullanım Şartları")
-        ),
-        React.createElement(
-          Stack,
-          { align: "flex-start" },
-          React.createElement(ListHeader, {}, "Bülten"),
-
-          React.createElement(
-            "small",
-            {},
-            "Kampanya ve Fırsatlarımızdan İlk Siz Haberdar Olun!"
-          )
-        )
-      )
-    ),
-    React.createElement(
-      Box,
-      {
-        borderTopWidth: 1,
-        borderStyle: "solid",
-        borderColor: useColorModeValue("gray.200", "gray.700"),
-      },
-      React.createElement(
-        Container,
-        {
-          as: Stack,
-          maxW: "6xl",
-          py: 4,
-          direction: { base: "column", md: "row" },
-          spacing: 4,
-          justify: { md: "space-between" },
-          align: { md: "center" },
-        },
-        React.createElement(
-          Flex,
-          { 
-            textAlign: 'center',
-          justifyContent:'flex-end'
-         },
-          `\u00A9 ${getFullYear()}  Eflatun Butik. Tüm Hakları Saklıdır.`
-        )
-      )
-    )
-  );
-}
+export default index;

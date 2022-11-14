@@ -68,13 +68,15 @@ function HeaderBrand() {
 
         <ButtonGroup>
           <Menu>
-            <MenuButton as={Button}>
+            <MenuButton as={Button}  >
               <IconButton
-                width={50}
+              
                 aria-label="product favorite"
                 icon={<AiOutlineUser />}
                 size="md"
+                bg={'transparent'}
               ></IconButton>
+
             </MenuButton>
             <MenuList>
               <MenuItem>Giriş Yap</MenuItem>

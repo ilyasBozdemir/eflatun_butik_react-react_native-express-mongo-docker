@@ -2,7 +2,7 @@ import React from "react";
 import Slider from "react-slick";
 import { Container } from "@chakra-ui/react";
 import SliderItem from "./SliderItem";
-import {data} from "./data";
+import { data } from "./data";
 
 function index() {
   const settings = {
@@ -21,9 +21,7 @@ function index() {
       <div>
         <Slider {...settings}>
           {data.map((item) => (
-            <>
-              <SliderItem key={item.id} src={item.url} alt={item.alt} />
-            </>
+            <SliderItem key={item.id} src={item.url} alt={item.alt} />
           ))}
         </Slider>
       </div>
