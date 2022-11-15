@@ -1,6 +1,6 @@
 import React from "react";
 import Logo from "../../components/Logo";
-import { Link } from "react-router-dom";
+import { Link as ReactLink } from "react-router-dom";
 import {
   Button,
   ButtonGroup,
@@ -10,14 +10,10 @@ import {
   Input,
   Stack,
   Text,
+  Link,
 } from "@chakra-ui/react";
 
-import {
-  FaGithub,
-  FaLinkedin,
-  FaInstagram,
-  FaFacebook,
-} from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaInstagram, FaFacebook } from "react-icons/fa";
 
 function index() {
   return (
@@ -42,28 +38,25 @@ function index() {
           md: "16",
         }}
       >
-        <Stack
-          spacing={{
-            base: "6",
-            md: "8",
-          }}
-          align="center"
-          justifyContent={'center'}
-          ml={10}
-          mr={10}
-        >
-          <Logo />
+        <Stack align="center" justifyContent={"center"} ml={10} mr={10}>
+          <ReactLink to="/">
+            <Logo />
+          </ReactLink>
+
           <Text color="muted.200">En Trend Kadın Giyim</Text>
 
           <ButtonGroup variant="ghost">
-            <Link href="/" isExternal>
+            <Link href="/" target="_blank">
               <IconButton
                 aria-label="Facebook"
                 icon={<FaFacebook fontSize="1.25rem" />}
                 _hover={{ bg: "blue.500", color: " white" }}
               />
             </Link>
-            <Link href="/" isExternal>
+            <Link
+              href="https://www.instagram.com/eflatun.butik/"
+              target="_blank"
+            >
               <IconButton
                 as="button"
                 aria-label="Instagram"
@@ -91,9 +84,15 @@ function index() {
                 Product
               </Text>
               <Stack spacing="3" shouldWrapChildren>
-                <Button variant="link" color="blue.400" >How it works</Button>
-                <Button variant="link" color="blue.400" >Pricing</Button>
-                <Button variant="link" color="blue.400">Use Cases</Button>
+                <Button variant="link" color="blue.400">
+                  How it works
+                </Button>
+                <Button variant="link" color="blue.400">
+                  Pricing
+                </Button>
+                <Button variant="link" color="blue.400">
+                  Use Cases
+                </Button>
               </Stack>
             </Stack>
             <Stack spacing="4" minW="36" flex="1">
@@ -101,19 +100,26 @@ function index() {
                 Legal
               </Text>
               <Stack spacing="3" shouldWrapChildren>
-                <Button variant="link" color="blue.400">Privacy</Button>
-                <Button variant="link" color="blue.400">Terms</Button>
-                <Button variant="link" color="blue.400">License</Button>
+                <Button variant="link" color="blue.400">
+                  Privacy
+                </Button>
+                <Button variant="link" color="blue.400">
+                  Terms
+                </Button>
+                <Button variant="link" color="blue.400">
+                  License
+                </Button>
               </Stack>
             </Stack>
           </Stack>
           <Stack spacing="4">
-
             <Text fontSize="sm" fontWeight="semibold">
               Bizden Haberler
             </Text>
 
-            <Text as="div">Kampanya ve Fırsatlarımızdan İlk Siz Haberdar Olun!</Text>
+            <Text as="div">
+              Kampanya ve Fırsatlarımızdan İlk Siz Haberdar Olun!
+            </Text>
 
             <Stack
               spacing="4"
@@ -152,7 +158,7 @@ function index() {
         </Text>
       </Stack>
 
-      <Divider orientation='horizontal'  />
+      <Divider orientation="horizontal" />
 
       <Stack
         justify="flex-end"
@@ -165,23 +171,33 @@ function index() {
         <Text textAlign="center" fontSize="sm" color="subtle">
           Bu websitesi İlyas Bozdemir tarafından geliştirilmiştir.
         </Text>
-        <ButtonGroup >
-          <Link href="https://github.com/ilyasBozdemir/" isExternal>
+        <ButtonGroup>
+          <Link
+            href="https://github.com/ilyasBozdemir/"
+            target={"_blank"}
+            isExternal
+          >
             <IconButton
+              as="i"
               aria-label="Github"
               icon={<FaGithub fontSize="1.25rem" />}
-              _hover={{ bg: "black.500", color: "white" }}
+              _hover={{ bg: "black", color: "white" }}
             />
           </Link>
           <Link href="https://www.instagram.com/bozdemirilyas1/" isExternal>
             <IconButton
+              as="i"
               aria-label="Instagram"
               icon={<FaInstagram fontSize="1.25rem" />}
               _hover={{ bg: "pink.500", color: " white" }}
             />
           </Link>
-          <Link href="https://www.linkedin.com/in/ilyas-bozdemir-093087207/" isExternal>
+          <Link
+            href="https://www.linkedin.com/in/ilyas-bozdemir-093087207/"
+            isExternal
+          >
             <IconButton
+              as="i"
               aria-label="Linkedin"
               icon={<FaLinkedin fontSize="1.25rem" />}
               _hover={{ bg: "blue.500", color: " white" }}

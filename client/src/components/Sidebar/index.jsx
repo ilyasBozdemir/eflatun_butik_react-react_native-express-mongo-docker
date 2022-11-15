@@ -6,27 +6,34 @@ import {
   Flex,
   Text,
   useMediaQuery as UseMediaQuery,
+  useBoolean as UseBoolean,
 } from "@chakra-ui/react";
 
 import Logo from "../Logo";
 
 import NavLink from "./NavLink";
 
-import {LinkItems} from '../LinkItems'
+import { LinkItems } from "../LinkItems";
+import { useEffect as UseEffect } from "react";
+import { useLocation as UseLocation } from "react-router-dom";
 
 function index({ onClose, ...rest }) {
-
   const [isDesktop] = UseMediaQuery("(min-width: 768px)");
 
+  let loc = UseLocation();
+
+  UseEffect(() => {
+  //bura rota değişince  onClose() cagırcaz
+  }, [loc]);
 
   return (
     <>
       <Box
-        transition={{base:"3s ease"}}
+        transition={{ base: "3s ease" }}
         bg="white"
         borderRight="1px"
         borderRightColor="gray.200"
-        w={{ base: "full" }}
+        w="full"
         pos="fixed"
         h="full"
         style={{ overflowY: "auto" }}
@@ -41,18 +48,14 @@ function index({ onClose, ...rest }) {
             onClick={onClose}
           />
         </Flex>
-        <Text>
-          test
-        </Text>
+        <Text>test</Text>
 
         {LinkItems.map((link, i) => (
           <NavLink key={i} link={link} />
         ))}
-      
       </Box>
-      
-      {isDesktop ? onClose() : ""}
 
+      {isDesktop ? onClose() : ""}
     </>
   );
 }

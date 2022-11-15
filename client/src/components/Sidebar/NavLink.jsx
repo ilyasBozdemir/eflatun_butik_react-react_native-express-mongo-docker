@@ -5,7 +5,7 @@ export default function NavLink({ link, ...rest }) {
   const { label, icon, href } = link;
 
   return (
-    <Link href={href}>
+    <Link to={href}>
       <Flex
         align="center"
         p="4"
@@ -13,16 +13,15 @@ export default function NavLink({ link, ...rest }) {
         borderRadius="lg"
         role="group"
         cursor="pointer"
-        _hover={{
-          bg: "cyan.400",
-          color: "white",
-        }}
+       
+        _hover={{ color: "white", bgGradient: "linear(to-l, #7928CA, #FF0080)" }}
+        
         {...rest}
       >
         {icon && (
           <Icon
             mr="4"
-            fontSize="16"
+            fontSize="25"
             _groupHover={{
               color: "white",
             }}

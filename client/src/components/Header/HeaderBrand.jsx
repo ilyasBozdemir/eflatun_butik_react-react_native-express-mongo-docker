@@ -1,7 +1,6 @@
 import React from "react";
 import {
   Flex,
-  Spacer,
   Box,
   Heading,
   ButtonGroup,
@@ -11,9 +10,6 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
-  Stack,
-  HStack,
-  VStack,
   useColorModeValue as UseColorModeValue,
 } from "@chakra-ui/react";
 
@@ -26,14 +22,13 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import SearchBox from "./SearchBox";
 
 import { Link } from "react-router-dom";
-import { BsBox } from "react-icons/bs";
 
 function HeaderBrand() {
   return (
     <>
       <Flex justifyContent={'flex-start'}>
           <Heading size="md">
-            <Link href="/">
+            <Link to="/">
               <Logo />
             </Link>
           </Heading>
