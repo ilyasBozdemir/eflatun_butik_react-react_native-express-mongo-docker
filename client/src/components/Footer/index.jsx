@@ -31,7 +31,7 @@ function index() {
       color={"black"}
       marginTop={10}
     >
-      <Divider   marginBottom={3}/>
+      <Divider marginBottom={3} />
       <Stack
         spacing="8"
         direction={{
@@ -113,7 +113,7 @@ function index() {
 
             <Text fontSize="sm" fontWeight="semibold" color="subtle">
 
-            Bizden Haberler
+              Bizden Haberler
             </Text>
 
             <Text as="div">Kampanya ve Fırsatlarımızdan İlk Siz Haberdar Olun!</Text>
@@ -140,7 +140,6 @@ function index() {
           </Stack>
         </Stack>
       </Stack>
-      <Divider />
       <Stack
         pt="8"
         justify="flex-start"
@@ -156,10 +155,12 @@ function index() {
         </Text>
       </Stack>
 
+      <Divider orientation='horizontal'  />
+
       <Stack
         justify="flex-end"
         direction={{
-          base: "column-reverse",
+          base: "column",
           md: "row",
         }}
         align="center"

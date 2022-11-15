@@ -1,30 +1,37 @@
 import React from "react";
 import { FiMenu } from "react-icons/fi";
-import
- { 
+import {
   IconButton,
   Flex,
+  Stack,
+  Spacer,
+  HStack,
   Text,
- } 
-from "@chakra-ui/react";
-import Logo from '../Logo'
-function index({ onOpen, ...rest }) {
+  Box,
+  useColorModeValue as UseColorModeValue,
+  Divider,
+} from "@chakra-ui/react";
 
+import { Link } from "react-router-dom";
+import Logo from "../Logo";
+
+import HeaderTop from "./HeaderTop";
+import HeaderBrand from "./HeaderBrand";
+import HeaderMenu from "./HeaderMenu";
+
+function index({ onOpen, ...rest }) {
   return (
+    <>
     <Flex
-      ml={{ base: 0, md: 60 }}
-      px="4"
       position="sticky"
       top="0"
-      height="20"
-      zIndex="1"
+      zIndex="10"
       alignItems="center"
-      bg="white"
-      borderBottomWidth="1px"
-      borderBottomColor="gray.200"
-      justifyContent={{ base: "space-between", md: "flex-end" }}
+      backdropFilter="blur(1.5rem)"
+      justifyContent={{ base: "flex-start", md: "flex-end" }}
       {...rest}
     >
+
       <IconButton
         display={{ base: "flex", md: "none" }}
         onClick={onOpen}
@@ -34,15 +41,29 @@ function index({ onOpen, ...rest }) {
       />
 
       <Text
+        as="div"
         display={{ base: "flex", md: "none" }}
         fontSize="2xl"
         fontFamily="monospace"
         fontWeight="bold"
       >
-        <Logo/>
+        <Logo />
       </Text>
 
+      <Stack 
+       display={{ base: "none", md: "flex" }}
+       w={'100%'}
+       >
+          <HeaderTop />
+       
+          <HeaderBrand />
+       
+          <HeaderMenu />
+      
+      </Stack>
+
     </Flex>
+    </>
   );
 }
 

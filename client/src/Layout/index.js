@@ -15,10 +15,10 @@ import
 function index({ children }) {
   const { isOpen, onOpen, onClose } = UseDisclosure();
   return (
-    <Box minH="100vh" bg="gray.100">
+    <Box minH="100vh" >
     <Sidebar
       onClose={() => onClose}
-      display={{ base: "none", md: "block" }}
+      display={{ base: "none", md: "none" }}
     />
     <Drawer
       autoFocus={false}
@@ -36,7 +36,7 @@ function index({ children }) {
 
     {/*= Header =*/}
     <Header onOpen={onOpen} />
-    <Box ml={{ base: 0, md: 60 }} p="4">
+    <Box>
       {children}
     </Box>
   </Box>
