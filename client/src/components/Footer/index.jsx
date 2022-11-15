@@ -10,13 +10,11 @@ import {
   Input,
   Stack,
   Text,
-  Heading,
 } from "@chakra-ui/react";
 
 import {
   FaGithub,
   FaLinkedin,
-  FaTwitter,
   FaInstagram,
   FaFacebook,
 } from "react-icons/fa";
@@ -111,8 +109,7 @@ function index() {
           </Stack>
           <Stack spacing="4">
 
-            <Text fontSize="sm" fontWeight="semibold" color="subtle">
-
+            <Text fontSize="sm" fontWeight="semibold">
               Bizden Haberler
             </Text>
 
@@ -168,23 +165,26 @@ function index() {
         <Text textAlign="center" fontSize="sm" color="subtle">
           Bu websitesi İlyas Bozdemir tarafından geliştirilmiştir.
         </Text>
-        <ButtonGroup variant="ghost">
-          <Link href="/" isExternal>
+        <ButtonGroup >
+          <Link href="https://github.com/ilyasBozdemir/" isExternal>
             <IconButton
               aria-label="Github"
               icon={<FaGithub fontSize="1.25rem" />}
+              _hover={{ bg: "black.500", color: "white" }}
             />
           </Link>
-          <Link href="/" isExternal>
+          <Link href="https://www.instagram.com/bozdemirilyas1/" isExternal>
             <IconButton
               aria-label="Instagram"
               icon={<FaInstagram fontSize="1.25rem" />}
+              _hover={{ bg: "pink.500", color: " white" }}
             />
           </Link>
-          <Link href="/" isExternal>
+          <Link href="https://www.linkedin.com/in/ilyas-bozdemir-093087207/" isExternal>
             <IconButton
               aria-label="Linkedin"
               icon={<FaLinkedin fontSize="1.25rem" />}
+              _hover={{ bg: "blue.500", color: " white" }}
             />
           </Link>
         </ButtonGroup>
