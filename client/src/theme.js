@@ -54,7 +54,13 @@ const theme = extendTheme({
     wider: "0.05em",
     widest: "0.1em",
   },
-  breakpoints: ["30em", "48em", "62em", "80em"],
+  breakpoints:{
+    sm: "30em",
+    md: "48em",
+    lg: "62em",
+    xl: "80em",
+    "2xl": "96em",
+  },
   space: {
     px: "1px",
     "0": "0",

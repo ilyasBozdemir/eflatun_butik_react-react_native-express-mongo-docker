@@ -4,16 +4,24 @@ import MySlider from "../components/MySlider";
 import IGStory from "../components/IGStory";
 import Highlights from "../components/Highlights";
 import Showcase from "../components/Showcase";
-import { Flex } from "@chakra-ui/react";
+import { Stack, HStack } from "@chakra-ui/react";
 
 function Home() {
   return (
-    <Flex w="100%">
-      <MySlider />
-      <IGStory />
-      <Highlights />
-      <Showcase />
-    </Flex>
+    <Stack>
+      <HStack>
+        <MySlider />
+      </HStack>
+      <HStack>
+        <IGStory />
+      </HStack>
+      <HStack>
+        <Highlights />
+      </HStack>
+      <HStack>
+        <Showcase />
+      </HStack>
+    </Stack>
   );
 }
 
