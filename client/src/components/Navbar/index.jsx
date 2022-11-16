@@ -6,12 +6,13 @@ import {
   Menu,
   MenuButton,
   MenuList,
-  Icon,
 } from "@chakra-ui/react";
 import { ChevronDownIcon, ChevronUpIcon } from "@chakra-ui/icons";
 
-function index({ name, icon }) {
+function index({ link }) {
   const { isOpen, onOpen, onClose } = UseDisclosure();
+  const { label, icon, href/*, childrens*/ } = link;
+
   return (
     <>
       <Menu isOpen={isOpen}>
@@ -21,17 +22,16 @@ function index({ name, icon }) {
           px={4}
           borderRadius={5}
           _hover={{ bg: UseColorModeValue("gray.100", "gray.700") }}
-          aria-label={name + " button"}
+          aria-label={label + " button"}
           fontWeight="normal"
           onMouseEnter={onOpen}
           onMouseLeave={onClose}
         >
-          {name} {isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />}
+          {label}
+          {isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />}
         </MenuButton>
         <MenuList onMouseEnter={onOpen} onMouseLeave={onClose}>
-          <MenuItem>Menu Item 1</MenuItem>
-          <MenuItem>Menu Item 2</MenuItem>
-          <MenuItem>Menu Item 3</MenuItem>
+          <MenuItem>link</MenuItem>
         </MenuList>
       </Menu>
     </>

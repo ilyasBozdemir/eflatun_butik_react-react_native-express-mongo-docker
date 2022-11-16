@@ -47,10 +47,6 @@ function index({ onClose, ...rest }) {
             onClick={onClose}
           />
         </Flex>
-        <Text>
-          [Sayfaiçi Arama]
-        </Text>
-
         {linkItems.map((link, i) => (
           <NavLink key={i} link={link} />
         ))}
