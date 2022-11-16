@@ -1,14 +1,13 @@
 import { Routes, Route } from "react-router-dom";
 
-import { Container } from "@chakra-ui/react";
-
 import Layout from "./Layout";
 import Footer from "./components/Footer";
 
 import Home from "./pages/Home";
+import Favorite from "./pages/Favorite";
 import Basket from "./pages/Basket";
 import Contact from "./pages/Contact";
-import Page404 from "./pages/Page404";
+import Page404 from "./pages/ErrorPage/Page404";
 import NewComers from "./pages/NewComers";
 import Dress from "./pages/Dress";
 import BottomClothing from "./pages/BottomClothing";
@@ -19,7 +18,6 @@ import Outlet from "./pages/Outlet";
 import CombineClothing from "./pages/CombineClothing";
 import Discount from "./pages/Discount";
 
-import Dress from "./pages/Dress";
 
 function App() {
   return (
@@ -29,6 +27,7 @@ function App() {
           <Route path="/" element={<Home />}>
             <Route index element={<Home />} />
             <Route path="/sepetim" element={<Basket />} />
+            <Route path="/favorilerim" element={<Favorite />} />
             <Route path="/iletisim" element={<Contact />} />
             <Route path="/yeni-gelenler" element={<NewComers />} />
             <Route path="/elbise" element={<Dress />} />

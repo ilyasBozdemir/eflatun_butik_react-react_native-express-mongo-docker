@@ -4,7 +4,9 @@ function SliderItem({ src, alt }) {
   return (
     <>
       <div>
-        <img src={src} alt={alt} draggable={false} />
+        <img 
+        src={src} 
+        alt={alt}   />
       </div>
     </>
   );

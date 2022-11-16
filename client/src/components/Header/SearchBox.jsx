@@ -1,31 +1,51 @@
-import React from "react";
-import { Input, IconButton } from "@chakra-ui/react";
+import React, { useEffect, useState } from "react";
+import { Input, Button, HStack } from "@chakra-ui/react";
 
 import { FiSearch } from "react-icons/fi";
 
 function SearchBox() {
+  const [placeHolder, setPlaceHolder] = useState("Aradığınız ürünü yazınız.");
+
+  const texts=[
+    '',
+    '',
+    '',
+    ''
+  ];
+
+ 
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setPlaceHolder(placeHolder.slice(0, placeHolder.length + 1));
+      
+
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, [placeHolder]);
+
   return (
     <>
-      <Input
-        variant="none"
-        placeholder="Aradığınız ürün, kategori veya markayı yazınız"
-        maxLength={30}
-        width={400}
-        size="md"
-        textAlign={"center"}
-        bgColor={"#ddd"}
-        color={"#000"}
-      />
+      <HStack>
+        <Input
+          placeholder={placeHolder}
+          maxLength={30}
+          width={{
+            sm: "300px",
+            md: "300px",
+            lg: "350px",
+            xl: "350px",
+            "2xl": "400px",
+          }}
+          size="md"
+          color={"#000"}
+        />
 
-      <IconButton
-        bgColor={"#ddd"}
-        color={"#7928CA"}
-        ml={2}
-        width={50}
-        aria-label="Search product"
-        icon={<FiSearch />}
-        size="md"
-      />
+        <Button bg={"transparent"} aria-label="Search product">
+          <FiSearch />
+        </Button>
+      </HStack>
     </>
   );
 }

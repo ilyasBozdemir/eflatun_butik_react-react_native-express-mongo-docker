@@ -3,7 +3,7 @@ import { GiClothes } from "react-icons/gi";
 import { CiDiscount1 } from "react-icons/ci";
 
 
-export const LinkItems = [
+export const linkItems = [
     { label: "Yeni Gelenler", icon: MdOutlineFiberNew, href: "/yeni-gelenler" },
     { label: "Elbise", icon: GiClothes, href: "/elbise" },
     { label: "Triko", icon: GiClothes, href: "/triko" },

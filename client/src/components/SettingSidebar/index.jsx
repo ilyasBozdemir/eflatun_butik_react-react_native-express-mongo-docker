@@ -12,7 +12,7 @@ import Logo from "../Logo";
 
 import NavLink from "./NavLink";
 
-import {LinkItems} from '../LinkItems'
+import {LinkItems} from '../linkItems'
 
 function index({ onClose, ...rest }) {
 

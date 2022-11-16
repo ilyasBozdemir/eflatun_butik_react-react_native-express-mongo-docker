@@ -6,14 +6,13 @@ import {
   Flex,
   Text,
   useMediaQuery as UseMediaQuery,
-  useBoolean as UseBoolean,
 } from "@chakra-ui/react";
 
 import Logo from "../Logo";
 
 import NavLink from "./NavLink";
 
-import { LinkItems } from "../LinkItems";
+import { linkItems } from "../linkItems";
 import { useEffect as UseEffect } from "react";
 import { useLocation as UseLocation } from "react-router-dom";
 
@@ -48,9 +47,11 @@ function index({ onClose, ...rest }) {
             onClick={onClose}
           />
         </Flex>
-        <Text>test</Text>
+        <Text>
+          [Sayfaiçi Arama]
+        </Text>
 
-        {LinkItems.map((link, i) => (
+        {linkItems.map((link, i) => (
           <NavLink key={i} link={link} />
         ))}
       </Box>
