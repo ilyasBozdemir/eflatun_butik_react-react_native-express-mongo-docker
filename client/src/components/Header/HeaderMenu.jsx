@@ -17,10 +17,7 @@ function HeaderMenu() {
             </Navbar>
           ))*/
       }
-      <Navbar pName="Yeni Gelenler" childrens={{}} />
-      <Navbar pName="Elbise" childrens={{}} />
-      <Navbar pName="Triko" childrens={{}} />
-      <Navbar pName="testmenu" childrens={{}} />
+      <Navbar link={{label:'', icon:'', href:''}} childrens={{links:{}}} />
     </Flex>
 
   );
