@@ -148,7 +148,18 @@ export const linkItems = [
     label: "Kombin",
     icon: GiClothes,
     href: "/kombin",
-    childrens: [],
+    childrens: [
+      {
+        label: "Etekli Kombin",
+        icon: GiClothes,
+        href: "/etekli-kombin",
+      },
+      {
+        label: "Pantolonlu Kombin",
+        icon: GiClothes,
+        href: "/pantolonlu-kombin",
+      },
+    ],
   },
   {
     label: "İndirim",

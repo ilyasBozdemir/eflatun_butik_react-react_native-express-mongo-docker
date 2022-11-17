@@ -1,6 +1,6 @@
 import React from "react";
 import { FiMenu } from "react-icons/fi";
-import { IconButton, Flex, Stack, Text,Box } from "@chakra-ui/react";
+import { IconButton, Flex, Stack, Text, Box } from "@chakra-ui/react";
 
 import { Link } from "react-router-dom";
 import Logo from "../Logo";
@@ -49,7 +49,9 @@ function index({ onOpen, ...rest }) {
           fontFamily="monospace"
           fontWeight="bold"
         >
-          <Logo />
+          <Link to="/">
+            <Logo />
+          </Link>
         </Text>
 
         <Stack display={{ base: "none", md: "flex" }} w={"100%"}>
@@ -61,18 +63,13 @@ function index({ onOpen, ...rest }) {
         </Stack>
       </Flex>
 
-      <Box  
-      display={{ base: "flex",  md: "none" } }
-        z-index='500'
-      > 
-      
-
-      <BottomNavigation 
-      colorScheme={{bg:'white'}}
-      value="/" 
-      showLabel="if-active" >
-       
-          <BottomNavigationItem value="/" >
+      <Box display={{ base: "flex", md: "none" }} z-index="500">
+        <BottomNavigation
+          colorScheme={{ bg: "white" }}
+          value="/"
+          showLabel="if-active"
+        >
+          <BottomNavigationItem value="/">
             <BottomNavigationIcon as={AiOutlineHome} />
             <BottomNavigationLabel>Home</BottomNavigationLabel>
           </BottomNavigationItem>
@@ -87,15 +84,12 @@ function index({ onOpen, ...rest }) {
             <BottomNavigationLabel>Search</BottomNavigationLabel>
           </BottomNavigationItem>
 
-        <BottomNavigationItem value="/user">
-          <BottomNavigationIcon as={AiOutlineUser} />
-          <BottomNavigationLabel>User</BottomNavigationLabel>
-        </BottomNavigationItem>
-
+          <BottomNavigationItem value="/user">
+            <BottomNavigationIcon as={AiOutlineUser} />
+            <BottomNavigationLabel>User</BottomNavigationLabel>
+          </BottomNavigationItem>
         </BottomNavigation>
-
       </Box>
-
     </>
   );
 }

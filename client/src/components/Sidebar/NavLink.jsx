@@ -1,11 +1,20 @@
 import { Link } from "react-router-dom";
-import { Flex, Icon, Text } from "@chakra-ui/react";
+import {
+  Icon,
+  Text,
+  useDisclosure as UseDisclosure,
+  Wrap,
+  WrapItem,
+  Flex,
+} from "@chakra-ui/react";
 
 export default function NavLink({ link, ...rest }) {
-  const { label, icon, href } = link;
+  const { label, href, icon, childrens } = link;
+
+  const { isOpen, onOpen, onClose } = UseDisclosure();
 
   return (
-    <Link to={href}>
+    <Link href={href} as="a">
       <Flex
         align="center"
         p="4"
@@ -13,9 +22,12 @@ export default function NavLink({ link, ...rest }) {
         borderRadius="lg"
         role="group"
         cursor="pointer"
-       
-        _hover={{ color: "white", bgGradient: "linear(to-l, #7928CA, #FF0080)" }}
-        
+        onMouseEnter={onOpen}
+        onMouseLeave={onClose}
+        _hover={{
+          color: "white",
+          bgGradient: "linear(to-l, #7928CA, #FF0080)",
+        }}
         {...rest}
       >
         {icon && (

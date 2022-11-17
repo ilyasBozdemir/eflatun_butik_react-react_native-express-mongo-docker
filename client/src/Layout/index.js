@@ -28,6 +28,7 @@ function index({ children }) {
       returnFocusOnClose={false}
       onOverlayClick={onClose}
       size="full"
+
     >
       <DrawerContent>
         <Sidebar onClose={onClose} />

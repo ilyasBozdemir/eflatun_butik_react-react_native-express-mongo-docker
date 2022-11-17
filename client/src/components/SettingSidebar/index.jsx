@@ -41,14 +41,7 @@ function index({ onClose, ...rest }) {
             onClick={onClose}
           />
         </Flex>
-        <Text>
-          test
-        </Text>
 
-        {LinkItems.map((link, i) => (
-          <NavLink key={i} link={link} />
-        ))}
-      
       </Box>
       
       {isDesktop ? onClose() : null}

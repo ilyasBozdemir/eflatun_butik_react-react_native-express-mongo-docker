@@ -13,17 +13,10 @@ import Logo from "../Logo";
 import NavLink from "./NavLink";
 
 import { linkItems } from "../linkItems";
-import { useEffect as UseEffect } from "react";
-import { useLocation as UseLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function index({ onClose, ...rest }) {
   const [isDesktop] = UseMediaQuery("(min-width: 768px)");
-
-  let loc = UseLocation();
-
-  UseEffect(() => {
-  //bura rota değişince  onClose() cagırcaz
-  }, [loc]);
 
   return (
     <>
@@ -40,7 +33,9 @@ function index({ onClose, ...rest }) {
       >
         <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
           <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
-            <Logo />
+            <Link to='/'>
+              <Logo />
+            </Link>
           </Text>
           <CloseButton
             display={{ base: "flex", md: "flex" }}
