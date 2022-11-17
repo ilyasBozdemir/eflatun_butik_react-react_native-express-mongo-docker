@@ -22,7 +22,7 @@ function index({ onClose, ...rest }) {
   return (
     <>
       <Box
-        transition={{base:"3s ease"}}
+        transition={'3s ease'}
         bg="white"
         borderRight="1px"
         borderRightColor="gray.200"
@@ -51,7 +51,7 @@ function index({ onClose, ...rest }) {
       
       </Box>
       
-      {isDesktop ? onClose() : ""}
+      {isDesktop ? onClose() : null}
 
     </>
   );
