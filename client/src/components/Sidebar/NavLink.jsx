@@ -21,7 +21,7 @@ export default function NavLink({ link, ...rest }) {
         mx="4"
         borderRadius="lg"
         role="group"
-        cursor="pointer"
+        
         onMouseEnter={onOpen}
         onMouseLeave={onClose}
         _hover={{
