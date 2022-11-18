@@ -18,6 +18,7 @@ import { Link } from "react-router-dom";
 function index({ onClose, ...rest }) {
   const [isDesktop] = UseMediaQuery("(min-width: 768px)");
 
+
   return (
     <>
       <Box
@@ -33,7 +34,7 @@ function index({ onClose, ...rest }) {
       >
         <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
           <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
-            <Link to='/'>
+            <Link to="/">
               <Logo />
             </Link>
           </Text>

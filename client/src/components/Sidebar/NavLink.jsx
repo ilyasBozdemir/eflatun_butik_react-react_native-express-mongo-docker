@@ -6,22 +6,23 @@ import {
   Wrap,
   WrapItem,
   Flex,
+  Button
 } from "@chakra-ui/react";
 
 export default function NavLink({ link, ...rest }) {
-  const { label, href, icon, childrens } = link;
-
+ 
   const { isOpen, onOpen, onClose } = UseDisclosure();
 
+  const { label, href, icon, childrens } = link;
+
   return (
-    <Link href={href} as="a">
+    <Link to={href} >
       <Flex
         align="center"
         p="4"
         mx="4"
         borderRadius="lg"
         role="group"
-        
         onMouseEnter={onOpen}
         onMouseLeave={onClose}
         _hover={{

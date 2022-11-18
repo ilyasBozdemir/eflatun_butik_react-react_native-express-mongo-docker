@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect as UseEffect } from "react";
 
 import {
   Box,
@@ -10,19 +10,14 @@ import {
 
 import Logo from "../Logo";
 
-import NavLink from "./NavLink";
-
-import {LinkItems} from '../../LinkItems'
-
 function index({ onClose, ...rest }) {
-
   const [isDesktop] = UseMediaQuery("(min-width: 768px)");
 
 
   return (
     <>
       <Box
-        transition={'3s ease'}
+        transition={"3s ease"}
         bg="white"
         borderRight="1px"
         borderRightColor="gray.200"
@@ -41,11 +36,9 @@ function index({ onClose, ...rest }) {
             onClick={onClose}
           />
         </Flex>
-
       </Box>
-      
-      {isDesktop ? onClose() : null}
 
+      {isDesktop ? onClose() : null}
     </>
   );
 }

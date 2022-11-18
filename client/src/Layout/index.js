@@ -21,13 +21,13 @@ function index({ children }) {
       display={{ base: "none", md: "none" }}
     />
     <Drawer
-      autoFocus={false}
+      autoFocus={true}
       isOpen={isOpen}
       placement="left"
       onClose={onClose}
       returnFocusOnClose={false}
       onOverlayClick={onClose}
-      size="full"
+      size="xs"
 
     >
       <DrawerContent>
