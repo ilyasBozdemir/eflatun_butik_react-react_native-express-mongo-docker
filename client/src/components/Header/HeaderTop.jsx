@@ -135,7 +135,7 @@ function HeaderTop() {
               <Stack direction="row">
                 <Text fontWeight="semibold">
                   {"Tema : "}
-                  <Badge colorScheme="purple">New</Badge>
+                  <Badge variant='outline' colorScheme='green'>Yeni</Badge>
                 </Text>
               </Stack>
               <ButtonGroup size="xl" isAttached variant="outline" p="5">
@@ -167,7 +167,7 @@ function HeaderTop() {
                 <Stack direction="row">
                   <Text fontWeight="semibold">
                     {"Yön : "}
-                    <Badge colorScheme="green">Yakında</Badge>
+                    <Badge colorScheme="red">Yakında</Badge>
                   </Text>
                 </Stack>
               </Text>
