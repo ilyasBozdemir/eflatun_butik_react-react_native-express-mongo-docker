@@ -7,7 +7,6 @@ import {
   IconButton,
   Flex,
   useColorMode as UseColorMode,
-  useColorModeValue as UseColorModeValue,
   Drawer,
   DrawerContent,
   DrawerOverlay,
@@ -25,7 +24,7 @@ import { IconContext } from "react-icons";
 
 function index({ isOpen, onOpen, onClose }) {
   const { colorMode, toggleColorMode } = UseColorMode();
-  const [selected, setSelected] = UseState("");
+  const [selected, setSelected] = UseState("TR");
   const arrowFromLeft = () => {};
   const arrowToLeft = () => {};
 
@@ -140,16 +139,18 @@ function index({ isOpen, onOpen, onClose }) {
               </ButtonGroup>
             </HStack>
             <HStack>
-            <Tooltip label="varsayılan site dilini ayarlayın.">
-              <Text fontWeight="semibold">
-                {"Dil : "}
-                <Badge colorScheme="purple"></Badge>
-              </Text>
+              <Tooltip label="varsayılan site dilini ayarlayın.">
+                <Text fontWeight="semibold">
+                  {"Dil : "}
+                  <Badge colorScheme="purple"></Badge>
+                </Text>
               </Tooltip>
               <ReactFlagsSelect
                 countries={["TR"]}
                 selected={selected}
-                onSelect={(code) => setSelected(code)}
+                onSelect={(code) => {
+                  setSelected(code);
+                }}
               />
             </HStack>
           </DrawerBody>

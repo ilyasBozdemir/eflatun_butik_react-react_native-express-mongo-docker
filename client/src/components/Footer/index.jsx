@@ -10,10 +10,14 @@ import {
   Input,
   Stack,
   Text,
-  Link,Box,
+  Link,
+  Box,
+  Spacer,
 } from "@chakra-ui/react";
 
 import { FaGithub, FaLinkedin, FaInstagram, FaFacebook } from "react-icons/fa";
+
+import iyzicoLogo from "../../assests/iyzico_ile_ode_colored.svg";
 
 function index() {
   return (
@@ -34,8 +38,8 @@ function index() {
         }}
         justify="space-between"
         py={{
-          base: "12",
-          md: "16",
+          base: "8",
+          md: "12",
         }}
       >
         <Stack align="center" justifyContent={"center"} ml={10} mr={10}>
@@ -65,6 +69,13 @@ function index() {
               />
             </Link>
           </ButtonGroup>
+
+          <img
+            src={iyzicoLogo}
+            alt="iyzico ile öde logo"
+            height={30}
+            width={110}
+          />
         </Stack>
 
         <Stack
@@ -78,36 +89,45 @@ function index() {
             md: "8",
           }}
         >
-          <Stack direction="row" spacing="8">
-            <Stack spacing="4" minW="36" flex="1">
-              <Text fontSize="sm" fontWeight="semibold" color="subtle">
-                Product
+          <Stack direction="row" spacing="2">
+            <Stack spacing="2" minW="36" flex="1">
+              <Text fontSize="sm" fontWeight="semibold">
+                Hesabım
               </Text>
-              <Stack spacing="3" shouldWrapChildren>
+              <Stack spacing="2" shouldWrapChildren>
                 <Button variant="link" color="blue.400">
-                  How it works
+                  Hesabım
                 </Button>
                 <Button variant="link" color="blue.400">
-                  Pricing
+                  Siparişlerim
                 </Button>
                 <Button variant="link" color="blue.400">
-                  Use Cases
+                  Alışveriş Sepetim
+                </Button>
+                <Button variant="link" color="blue.400">
+                  Favorilerim
                 </Button>
               </Stack>
             </Stack>
-            <Stack spacing="4" minW="36" flex="1">
-              <Text fontSize="sm" fontWeight="semibold" color="subtle">
-                Legal
+            <Stack spacing="2" minW="36" flex="1">
+              <Text fontSize="sm" fontWeight="semibold">
+                Sözleşmeler
               </Text>
-              <Stack spacing="3" shouldWrapChildren>
+              <Stack spacing="2" shouldWrapChildren>
                 <Button variant="link" color="blue.400">
-                  Privacy
+                  Mesafeli Satış Sözleşmesi
                 </Button>
                 <Button variant="link" color="blue.400">
-                  Terms
+                  Üyelik Sözleşmesi
                 </Button>
                 <Button variant="link" color="blue.400">
-                  License
+                  Çerez Politikası
+                </Button>
+                <Button variant="link" color="blue.400">
+                  Gizlilik Sözleşmesi
+                </Button>
+                <Button variant="link" color="blue.400">
+                  Kullanım Koşulları
                 </Button>
               </Stack>
             </Stack>
@@ -132,7 +152,7 @@ function index() {
               }}
             >
               <Input
-                placeholder="e-mail adresini giriniz"
+                placeholder="E-mail adresini giriniz"
                 type="email"
                 required
               />
@@ -144,22 +164,21 @@ function index() {
         </Stack>
       </Stack>
       <Stack
-        pt="8"
-        justify="flex-start"
+        justify="center"
         direction={{
-          base: "column-reverse",
+          base: "row",
           md: "row",
         }}
         align="center"
       >
         <Text fontSize="sm" color="subtle">
-          &copy; {new Date().getFullYear()} Eflatun Butik. Tüm Hakları
-          Saklıdır..
+          &copy; {new Date().getFullYear() + " "}
+          Eflatun Butik. Tüm Hakları Saklıdır..
         </Text>
       </Stack>
 
       <Divider orientation="horizontal" />
-
+      <Divider orientation="horizontal" />
       <Stack
         justify="flex-end"
         direction={{
@@ -182,6 +201,7 @@ function index() {
               aria-label="Github"
               icon={<FaGithub fontSize="1.25rem" />}
               _hover={{ bg: "black", color: "white" }}
+              bg={"transparent"}
             />
           </Link>
           <Link href="https://www.instagram.com/bozdemirilyas1/" isExternal>
@@ -190,6 +210,7 @@ function index() {
               aria-label="Instagram"
               icon={<FaInstagram fontSize="1.25rem" />}
               _hover={{ bg: "pink.500", color: " white" }}
+              bg={"transparent"}
             />
           </Link>
           <Link
@@ -201,6 +222,7 @@ function index() {
               aria-label="Linkedin"
               icon={<FaLinkedin fontSize="1.25rem" />}
               _hover={{ bg: "blue.500", color: " white" }}
+              bg={"transparent"}
             />
           </Link>
         </ButtonGroup>
