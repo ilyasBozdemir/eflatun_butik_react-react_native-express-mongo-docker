@@ -1,6 +1,14 @@
 import React from "react";
 import { FiMenu } from "react-icons/fi";
-import { IconButton, Flex, Stack, Text, Box, Spacer } from "@chakra-ui/react";
+import {
+  IconButton,
+  Flex,
+  Stack,
+  Text,
+  Box,
+  Spacer,
+  useDisclosure as UseDisclosure,
+} from "@chakra-ui/react";
 
 import { Link } from "react-router-dom";
 import Logo from "../Logo";
@@ -22,7 +30,16 @@ import {
   AiOutlineUser,
 } from "react-icons/ai";
 
+import SettingSidebar from "components/SettingSidebar";
+import SettingSidebarButton from "components/SettingSidebar/SettingSidebarButton";
+
 function index({ onOpen, ...rest }) {
+  const {
+    isOpen: isOpenSettingSidebar,
+    onOpen: onOpenSettingSidebar,
+    onClose: onCloseSettingSidebar,
+  } = UseDisclosure();
+
   return (
     <>
       <Flex
@@ -55,7 +72,13 @@ function index({ onOpen, ...rest }) {
         </Text>
         <Spacer />
         {/*settings component*/}
+        <SettingSidebarButton onOpen={onOpenSettingSidebar} />
 
+        <SettingSidebar
+          onOpen={onOpenSettingSidebar}
+          isOpen={isOpenSettingSidebar}
+          onClose={onCloseSettingSidebar}
+        />
         {/**/}
 
         <Stack display={{ base: "none", md: "flex" }} w={"100%"}>
