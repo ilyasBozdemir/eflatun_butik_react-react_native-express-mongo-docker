@@ -10,7 +10,7 @@ import {
   Input,
   Stack,
   Text,
-  Link,
+  Link,Box,
 } from "@chakra-ui/react";
 
 import { FaGithub, FaLinkedin, FaInstagram, FaFacebook } from "react-icons/fa";
@@ -204,6 +204,7 @@ function index() {
             />
           </Link>
         </ButtonGroup>
+        <Box height={50} display={{ base: "block", md: "none" }}></Box>
       </Stack>
     </Container>
   );

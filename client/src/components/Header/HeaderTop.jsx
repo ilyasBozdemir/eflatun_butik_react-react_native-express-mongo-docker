@@ -75,7 +75,12 @@ function HeaderTop() {
           <Link href="#">Bize Ulaşın</Link>
         </Box>
 
-        <SettingSidebarButton onOpen={onOpenSettingSidebar} />
+       
+        <Box>
+          <SettingSidebarButton onOpen={onOpenSettingSidebar} />
+        </Box>
+
+
       </Flex>
 
       <SettingSidebar

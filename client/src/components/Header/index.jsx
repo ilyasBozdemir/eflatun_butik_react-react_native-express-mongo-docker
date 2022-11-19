@@ -8,6 +8,7 @@ import {
   Box,
   Spacer,
   useDisclosure as UseDisclosure,
+  useColorModeValue as UseColorModeValue,
 } from "@chakra-ui/react";
 
 import { Link } from "react-router-dom";
@@ -17,21 +18,10 @@ import HeaderTop from "./HeaderTop";
 import HeaderBrand from "./HeaderBrand";
 import HeaderMenu from "./HeaderMenu";
 
-import {
-  BottomNavigation,
-  BottomNavigationItem,
-  BottomNavigationIcon,
-  BottomNavigationLabel,
-} from "chakra-ui-bottom-navigation";
-import {
-  AiOutlineHome,
-  AiOutlineSearch,
-  AiOutlineStar,
-  AiOutlineUser,
-} from "react-icons/ai";
-
 import SettingSidebar from "components/SettingSidebar";
 import SettingSidebarButton from "components/SettingSidebar/SettingSidebarButton";
+
+import BottomNavigation from "../../components/BottomNavigation";
 
 function index({ onOpen, ...rest }) {
   const {
@@ -40,15 +30,18 @@ function index({ onOpen, ...rest }) {
     onClose: onCloseSettingSidebar,
   } = UseDisclosure();
 
+  const items = () => {};
+
   return (
     <>
       <Flex
         position="sticky"
         top="0"
-        zIndex="10"
+        zIndex="1000"
         alignItems="center"
-        backdropFilter="blur(1.5rem)"
         justifyContent={{ base: "flex-start", md: "flex-end" }}
+        bg={UseColorModeValue("white", "blackAlpha.50")}
+        /*  backdropFilter="blur(1.5rem)"*/
         {...rest}
       >
         <IconButton
@@ -71,8 +64,14 @@ function index({ onOpen, ...rest }) {
           </Link>
         </Text>
         <Spacer />
+
         {/*settings component*/}
-        <SettingSidebarButton onOpen={onOpenSettingSidebar} />
+        <Box display={{ base: "block", md: "block",lg:'none' }}>
+         <SettingSidebarButton onOpen={onOpenSettingSidebar} />
+        </Box>
+
+         
+        
 
         <SettingSidebar
           onOpen={onOpenSettingSidebar}
@@ -83,39 +82,14 @@ function index({ onOpen, ...rest }) {
 
         <Stack display={{ base: "none", md: "flex" }} w={"100%"}>
           <HeaderTop />
-
           <HeaderBrand />
-
           <HeaderMenu />
         </Stack>
       </Flex>
 
-      <Box display={{ base: "none", md: "none" }} z-index="500">
-        <BottomNavigation
-          colorScheme={{ bg: "white" }}
-          value="/"
-          showLabel="if-active"
-        >
-          <BottomNavigationItem value="/">
-            <BottomNavigationIcon as={AiOutlineHome} />
-            <BottomNavigationLabel>Home</BottomNavigationLabel>
-          </BottomNavigationItem>
-
-          <BottomNavigationItem value="/favorites">
-            <BottomNavigationIcon as={AiOutlineStar} />
-            <BottomNavigationLabel>Favorites</BottomNavigationLabel>
-          </BottomNavigationItem>
-
-          <BottomNavigationItem value="/search">
-            <BottomNavigationIcon as={AiOutlineSearch} />
-            <BottomNavigationLabel>Search</BottomNavigationLabel>
-          </BottomNavigationItem>
-
-          <BottomNavigationItem value="/user">
-            <BottomNavigationIcon as={AiOutlineUser} />
-            <BottomNavigationLabel>User</BottomNavigationLabel>
-          </BottomNavigationItem>
-        </BottomNavigation>
+      {/*= Mobile Bottom Navigation =*/}
+      <Box display={{ base: "block", md: "none" }}>
+        <BottomNavigation />
       </Box>
     </>
   );
