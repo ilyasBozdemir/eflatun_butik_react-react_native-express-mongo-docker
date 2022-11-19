@@ -6,9 +6,9 @@ import { FiSearch } from "react-icons/fi";
 function SearchBox() {
   return (
     <>
-      <HStack borderStyle='dotted' borderColor="gray.200">
+      <HStack borderStyle="dotted" borderColor="gray.200">
         <Input
-         variant='flushed'
+          variant="flushed"
           placeholder={"Ara"}
           maxLength={30}
           width={{

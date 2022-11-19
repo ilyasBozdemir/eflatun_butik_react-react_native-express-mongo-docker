@@ -7,11 +7,10 @@ import {
   IconButton,
   Flex,
   useColorMode as UseColorMode,
-  useDisclosure as UseDisclosure,
+  useColorModeValue as UseColorModeValue,
   Drawer,
-  DrawerOverlay,
   DrawerContent,
-  DrawerHeader,
+  DrawerOverlay,
   DrawerBody,
   ButtonGroup,
   Text,
@@ -19,7 +18,11 @@ import {
   Stack,
   CloseButton,
   Badge,
+  Tooltip,
 } from "@chakra-ui/react";
+
+import { IconContext } from "react-icons";
+
 function index({ isOpen, onOpen, onClose }) {
   const { colorMode, toggleColorMode } = UseColorMode();
   const [selected, setSelected] = UseState("");
@@ -60,70 +63,89 @@ function index({ isOpen, onOpen, onClose }) {
           <DrawerBody justifyContent="space-evenly">
             <HStack textAlign={"center"}>
               <Stack direction="row">
-                <Text fontWeight="semibold">
-                  {"Tema : "}
-                  <Badge variant="outline" colorScheme="green">
-                    Yeni
-                  </Badge>
-                </Text>
+                <Tooltip label="Site tema rengini ayarlayın">
+                  <Text fontWeight="semibold">
+                    {"Tema : "}
+                    <Badge variant="outline" colorScheme="green">
+                      Yeni
+                    </Badge>
+                  </Text>
+                </Tooltip>
               </Stack>
               <ButtonGroup size="xl" isAttached variant="outline" p="5">
-                <IconButton
-                  onClick={setDarkMode}
-                  aria-label="set light mode"
-                  icon={<SunIcon />}
-                  size="md"
-                  bg="transparent"
-                />
-                <IconButton
-                  onClick={setSystemMode}
-                  aria-label="set system mode"
-                  icon={<GrSystem />}
-                  size="md"
-                  bg="transparent"
-                />
-                <IconButton
-                  onClick={setLightMode}
-                  aria-label="set light mode"
-                  icon={<MoonIcon />}
-                  size="md"
-                  bg="transparent"
-                />
+                <Tooltip label="Gündüz moduna uyarla">
+                  <IconButton
+                    onClick={setDarkMode}
+                    aria-label="Gündüz moduna uyarla"
+                    icon={<SunIcon />}
+                    size="md"
+                    bg="transparent"
+                  />
+                </Tooltip>
+                <Tooltip label="System moduna uyarla">
+                  <IconButton
+                    onClick={setSystemMode}
+                    aria-label="set system mode"
+                    icon={<GrSystem />}
+                    size="md"
+                    bg="transparent"
+                    disabled
+                  />
+                </Tooltip>
+                <Tooltip label="Koyu moduna uyarla">
+                  <IconButton
+                    onClick={setLightMode}
+                    aria-label="set light mode"
+                    icon={<MoonIcon />}
+                    size="md"
+                    bg="transparent"
+                  />
+                </Tooltip>
               </ButtonGroup>
             </HStack>
+
             <HStack>
               <Text>
                 <Stack direction="row">
-                  <Text fontWeight="semibold">
-                    {"Yön : "}
-                    <Badge colorScheme="red">Yakında</Badge>
-                  </Text>
+                  <Tooltip label="Site metin yönünü ayarı örnek arapça dili sağdan soladır.">
+                    <Text fontWeight="semibold">
+                      {"Yön : "}
+                      <Badge colorScheme="red">Yakında</Badge>
+                    </Text>
+                  </Tooltip>
                 </Stack>
               </Text>
+
               <ButtonGroup size="xl" isAttached variant="outline" p="5">
-                <IconButton
-                  onClick={arrowToLeft}
-                  aria-label="BiArrowToLeft"
-                  icon={<BiArrowToLeft />}
-                  size="md"
-                  bg="transparent"
-                  disabled
-                />
-                <IconButton
-                  onClick={arrowFromLeft}
-                  aria-label="BiArrowFromLeft"
-                  icon={<BiArrowFromLeft />}
-                  size="md"
-                  bg="transparent"
-                  disabled
-                />
+                <Tooltip label="Sağdan sola hizala">
+                  <IconButton
+                    onClick={arrowToLeft}
+                    aria-label="BiArrowToLeft"
+                    icon={<BiArrowToLeft />}
+                    size="md"
+                    bg="transparent"
+                    disabled
+                  />
+                </Tooltip>
+                <Tooltip label="Soldan sağa hizala.">
+                  <IconButton
+                    onClick={arrowFromLeft}
+                    aria-label="BiArrowFromLeft"
+                    icon={<BiArrowFromLeft />}
+                    size="md"
+                    bg="transparent"
+                    disabled
+                  />
+                </Tooltip>
               </ButtonGroup>
             </HStack>
             <HStack>
+            <Tooltip label="varsayılan site dilini ayarlayın.">
               <Text fontWeight="semibold">
                 {"Dil : "}
                 <Badge colorScheme="purple"></Badge>
               </Text>
+              </Tooltip>
               <ReactFlagsSelect
                 countries={["TR"]}
                 selected={selected}
