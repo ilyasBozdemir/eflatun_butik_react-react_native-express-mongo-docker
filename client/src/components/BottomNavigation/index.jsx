@@ -15,27 +15,39 @@ import {
   VStack,
   Text,
   Icon,
+  Tooltip,
 } from "@chakra-ui/react";
 
 import { Link } from "react-router-dom";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 
 function index() {
   const navs = [
     {
       to: "/",
       icon: AiOutlineHome,
+      label: "anasayfa",
     },
     {
       to: "/ara",
       icon: AiOutlineSearch,
+      label: "ara",
+    },
+    {
+      to: "/sepetim",
+      icon: AiOutlineShoppingCart,
+      label: "sepetim",
     },
     {
       to: "/favorilerim",
       icon: AiOutlineStar,
+      label: "favorilerim",
     },
+
     {
       to: "/hesabim",
       icon: AiOutlineUser,
+      label: "hesabım",
     },
   ];
   return (
@@ -51,20 +63,27 @@ function index() {
           borderRadius={"10px 10px 10px 10px"}
           bgGradient="linear(to-r, #3A1C71, #CB356B, #BD3F32)"
           textAlign={"center"}
+          boxShadow="xs"
+          rounded="md"
         >
           <Flex
             direction={"row"}
             justifyContent={"space-between"}
             textAlign={"center"}
             mx={5}
-            my={2}
+            my={3}
           >
             {navs.map((nav, i) => (
-              <Text key={i}>
+              <Tooltip key={i} label={nav.label}>
                 <Link to={nav.to}>
-                  <Icon as={nav.icon} w={8} h={8} />
+                  <Icon
+                    as={nav.icon}
+                    w={6}
+                    h={6}
+                    _hover={{ color: "gray.500" }}
+                  />
                 </Link>
-              </Text>
+              </Tooltip>
             ))}
           </Flex>
         </Box>

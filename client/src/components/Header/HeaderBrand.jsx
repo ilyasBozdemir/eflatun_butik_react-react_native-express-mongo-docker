@@ -14,6 +14,7 @@ import {
   MenuItem,
   useColorModeValue as UseColorModeValue,
   useDisclosure as UseDisclosure,
+  Icon,
 } from "@chakra-ui/react";
 
 import Logo from "../Logo";
@@ -64,7 +65,7 @@ function HeaderBrand() {
               onMouseLeave={onClose}
             >
               <HStack>
-                <AiOutlineUser />
+                <Icon as={AiOutlineUser} fontSize={25} />
                 {isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />}
               </HStack>
             </MenuButton>
@@ -76,13 +77,12 @@ function HeaderBrand() {
           </Menu>
 
           <Button bg={"transparent"} aria-label="product favorite">
-            <GrFavorite />
+            <Icon as={GrFavorite} fontSize={25} />
           </Button>
 
           <Button bg={"transparent"} aria-label="product basket button">
-            <AiOutlineShoppingCart />
+            <Icon as={AiOutlineShoppingCart} fontSize={25} />
           </Button>
-
         </ButtonGroup>
       </Flex>
     </>
