@@ -6,7 +6,6 @@ import {
   Box,
   Heading,
   ButtonGroup,
-  IconButton,
   Button,
   Menu,
   MenuButton,
@@ -20,8 +19,9 @@ import {
 import Logo from "../Logo";
 
 import { AiOutlineUser } from "react-icons/ai";
-import { GrFavorite } from "react-icons/gr";
-import { AiOutlineShoppingCart } from "react-icons/ai";
+import { MdFavorite, MdOutlineFavoriteBorder } from "react-icons/md";
+
+import { MdOutlineShoppingCart, MdShoppingCart } from "react-icons/md";
 
 import SearchBox from "./SearchBox";
 
@@ -32,7 +32,9 @@ import { ChevronDownIcon, ChevronUpIcon } from "@chakra-ui/icons";
 function HeaderBrand() {
   const userRef = React.useRef();
   const { isOpen, onOpen, onClose } = UseDisclosure();
-
+  const [isFavoriShown, setIsFavoriShown] = React.useState(false);
+  const [shoppingCartisShown, setShoppingCartIsShown] = React.useState(false);
+  const [userIsShown, setUserIsShown] = React.useState(false);
   return (
     <>
       <Flex justifyContent={"flex-start"} mt={5}>
@@ -80,12 +82,31 @@ function HeaderBrand() {
             </MenuList>
           </Menu>
 
-          <Button bg={"transparent"} aria-label="product favorite">
-            <Icon as={GrFavorite} fontSize={25} />
+          <Button
+            bg={"transparent"}
+            aria-label="product favorite"
+            onMouseEnter={() => setIsFavoriShown(true)}
+            onMouseLeave={() => setIsFavoriShown(false)}
+            className={"my-favorite-button"}
+          >
+            {isFavoriShown ? (
+              <Icon as={MdFavorite} fontSize={25} />
+            ) : (
+              <Icon as={MdOutlineFavoriteBorder} fontSize={25} />
+            )}
           </Button>
 
-          <Button bg={"transparent"} aria-label="product basket button">
-            <Icon as={AiOutlineShoppingCart} fontSize={25} />
+          <Button
+            bg={"transparent"}
+            aria-label="product basket button"
+            onMouseEnter={() => setShoppingCartIsShown(true)}
+            onMouseLeave={() => setShoppingCartIsShown(false)}
+          >
+            {shoppingCartisShown ? (
+              <Icon as={MdShoppingCart} fontSize={25} />
+            ) : (
+              <Icon as={MdOutlineShoppingCart} fontSize={25} />
+            )}
           </Button>
         </ButtonGroup>
       </Flex>
