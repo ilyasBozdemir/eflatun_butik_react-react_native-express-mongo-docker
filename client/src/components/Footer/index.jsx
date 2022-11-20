@@ -107,6 +107,9 @@ function index() {
                 <Button variant="link" color="blue.400">
                   Favorilerim
                 </Button>
+                <Button variant="link" color="blue.400">
+                  Canlı Destek
+                </Button>
               </Stack>
             </Stack>
             <Stack spacing="2" minW="36" flex="1">

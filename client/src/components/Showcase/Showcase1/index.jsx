@@ -1,4 +1,6 @@
 import React from "react";
+import { Typewriter, Cursor } from "react-simple-typewriter";
+
 import {
   Box,
   Flex,
@@ -16,6 +18,13 @@ import { FaArrowRight } from "react-icons/fa";
 import Logo from "../../Logo";
 
 function index() {
+  const texts = [
+    "Gardırobunuzu yenileme zamanı",
+     "Tesettür Giyim, aradığınız ve daha fazla indirimli ürün en uygun fiyatlar ve kampanyalarla Eflatun Butik'te."];
+
+  const handleType = (count) => {};
+
+  const handleDone = () => {};
   return (
     <>
       <Box
@@ -85,7 +94,18 @@ function index() {
                   <Logo />
                 </Heading>
                 <Heading size="xl" fontWeight="normal">
-                  Gardırobunuzu yenileyin
+                  <Typewriter
+                    words={texts}
+                    loop={true}
+                    cursor
+                    typeSpeed={100}
+                    deleteSpeed={50}
+                    delaySpeed={1000}
+                    onLoopDone={handleDone}
+                    onType={handleType}
+                    cursorBlinking={false}
+                  />
+                  <Cursor cursorColor='black' />
                 </Heading>
               </Stack>
               <HStack spacing="3">

@@ -15,6 +15,7 @@ import Outlet from "./pages/Outlet";
 import CombineClothing from "./pages/CombineClothing";
 import Discount from "./pages/Discount";
 
+import Login from './pages/Login'
 
 function Router() {
   return (
@@ -33,6 +34,8 @@ function Router() {
             <Route path="/outlet" element={<Outlet />} />
             <Route path="/kombin" element={<CombineClothing />} />
             <Route path="/indirim" element={<Discount />} />
+            <Route path="/giris" element={<Login />} />
+            <Route path="/uyelik" element={<Login />} />
             <Route path="*" element={<Page404 />} />
       </Routes>
     </>

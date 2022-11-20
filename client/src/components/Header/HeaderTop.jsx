@@ -17,6 +17,12 @@ function HeaderTop() {
     onOpen: onOpenSettingSidebar,
     onClose: onCloseSettingSidebar,
   } = UseDisclosure();
+
+  const _hover = {
+    color: "#fff",
+    bgGradient: "linear(to-l, #7928CA, #FF0080)",
+  };
+
   return (
     <>
       <Flex
@@ -26,20 +32,14 @@ function HeaderTop() {
         justifyItems={"center"}
       >
         <Box
-          _hover={{
-            color: "#fff",
-            bgGradient: "linear(to-l, #7928CA, #FF0080)",
-          }}
+          _hover={_hover}
           mx={3}
         >
           <Link href="#">info@eflatunbutik.com</Link>
         </Box>
 
         <Box
-          _hover={{
-            color: "#fff",
-            bgGradient: "linear(to-l, #7928CA, #FF0080)",
-          }}
+         _hover={_hover}
           mx={3}
         >
           <Link href="#">S.S.S</Link>
@@ -47,10 +47,7 @@ function HeaderTop() {
 
         <Spacer />
         <Box
-          _hover={{
-            color: "#fff",
-            bgGradient: "linear(to-l, #7928CA, #FF0080)",
-          }}
+          _hover={_hover}
           mx={3}
         >
           <Link href="#">Siparişim Nerede</Link>
@@ -66,21 +63,15 @@ function HeaderTop() {
           <Link href="#">Yardım</Link>
         </Box>
         <Box
-          _hover={{
-            color: "#fff",
-            bgGradient: "linear(to-l, #7928CA, #FF0080)",
-          }}
+           _hover={_hover}
           mx={3}
         >
           <Link href="#">Bize Ulaşın</Link>
         </Box>
 
-       
         <Box>
           <SettingSidebarButton onOpen={onOpenSettingSidebar} />
         </Box>
-
-
       </Flex>
 
       <SettingSidebar

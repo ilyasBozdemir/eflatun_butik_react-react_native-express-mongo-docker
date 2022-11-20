@@ -71,8 +71,12 @@ function HeaderBrand() {
             </MenuButton>
 
             <MenuList onMouseEnter={onOpen} onMouseLeave={onClose}>
-              <MenuItem>Giriş Yap</MenuItem>
-              <MenuItem>Üye Ol</MenuItem>
+              <Link to="/giris">
+                <MenuItem>Giriş Yap</MenuItem>
+              </Link>
+              <Link to="/uyelik">
+                <MenuItem>Üye Ol</MenuItem>
+              </Link>
             </MenuList>
           </Menu>
 

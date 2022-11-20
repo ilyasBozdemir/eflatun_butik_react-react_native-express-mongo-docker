@@ -4,17 +4,11 @@ import
 } 
 from "@chakra-ui/react";
 
-import { BottomNavigationStyleConfig } from 'chakra-ui-bottom-navigation';
 
-const bottomNavigationOverries = {
-  // ... component's override
-};
 
 
 const theme = extendTheme({
-  components: {
-    BottomNavigation: BottomNavigationStyleConfig,
-  },
+  
   config: {
     initialColorMode: 'system',
     useSystemColorMode: false,
