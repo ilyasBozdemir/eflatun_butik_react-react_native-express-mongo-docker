@@ -8,17 +8,21 @@ import {
   Input,
   Stack,
   Text,
+  Box,
   useColorModeValue as UseColorModeValue,
 } from "@chakra-ui/react";
 import * as React from "react";
 import { OAuthButtonGroup } from "./OAuthButtonGroup";
 import { PasswordField } from "./PasswordField";
+import { useFormik as UseFormik } from "formik";
+import LoginButton from "./LoginButton";
 
-const index = () => (
-  <>
-    <Stack spacing="6">
+function index() {
+  return (
+    <>
+      <Stack spacing="6">
       <Stack spacing="5">
-        <FormControl>
+        <FormControl >
           <FormLabel htmlFor="email">E-Posta</FormLabel>
           <Input id="email" type="email" />
         </FormControl>
@@ -38,7 +42,7 @@ const index = () => (
           bgGradient={"linear(to-l, #7928CA, #FF0080)"}
           _hover={{
             bg: UseColorModeValue("gray.800", "gray.500"),
-            bgGradient: "linear(to-l, #ac28ca, #ff1060)",
+            bgGradient: "linear(to-r, #ac28ca, #ff1060)",
           }}
         >
           Giriş Yap
@@ -53,7 +57,8 @@ const index = () => (
         <OAuthButtonGroup />
       </Stack>
     </Stack>
-  </>
-);
+    </>
+  );
+}
 
 export default index;
