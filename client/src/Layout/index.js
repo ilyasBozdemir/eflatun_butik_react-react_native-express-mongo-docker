@@ -34,7 +34,6 @@ function index({ children }) {
       <Header onOpen={onOpen} />
 
       <Box>
-     
         {/*= add children components =*/}
         {children}
       </Box>

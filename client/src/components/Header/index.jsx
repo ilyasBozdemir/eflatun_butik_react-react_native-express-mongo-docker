@@ -18,8 +18,8 @@ import HeaderTop from "./HeaderTop";
 import HeaderBrand from "./HeaderBrand";
 import HeaderMenu from "./HeaderMenu";
 
-import SettingSidebar from "components/SettingSidebar";
-import SettingSidebarButton from "components/SettingSidebar/SettingSidebarButton";
+import SettingSidebar from "../../components/SettingSidebar";
+import SettingSidebarButton from "../../components/SettingSidebar/SettingSidebarButton";
 
 import BottomNavigation from "../../components/BottomNavigation";
 
@@ -30,8 +30,7 @@ function index({ onOpen, ...rest }) {
     onClose: onCloseSettingSidebar,
   } = UseDisclosure();
 
-  const items = () => {};
-
+  
   return (
     <>
       <Flex

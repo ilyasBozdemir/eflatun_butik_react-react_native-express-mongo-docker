@@ -93,7 +93,7 @@ function index() {
                 <Heading size="xl">
                   <Logo />
                 </Heading>
-                <Heading size="xl" fontWeight="normal">
+                <Heading size="lg" fontWeight="normal">
                   <Typewriter
                     words={texts}
                     loop={true}

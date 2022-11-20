@@ -1,13 +1,11 @@
 import React from "react";
-
+import { Image, Box } from "@chakra-ui/react";
 function SliderItem({ src, alt }) {
   return (
     <>
-      <div>
-        <img 
-        src={src} 
-        alt={alt}   />
-      </div>
+      <Box>
+        <Image src={src} alt={alt}/>
+      </Box>
     </>
   );
 }
