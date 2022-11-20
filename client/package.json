@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/register": "^7.18.9",
     "@chakra-ui/icons": "^2.0.11",
     "@chakra-ui/react": "^2.4.1",
     "@chakra-ui/theme-tools": "^2.0.12",
@@ -18,6 +21,7 @@
     "express": "^4.18.2",
     "formik": "^2.2.9",
     "framer-motion": "^7.6.7",
+    "ignore-styles": "^5.0.1",
     "path": "^0.12.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -48,10 +52,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "watch": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch",
-    "dev:build-server": "SET NODE_ENV=development webpack --config webpack.server.js --mode=development -w",
-    "dev:start": "nodemon ./server-build/index.js",
-    "dev": "npm-run-all --parallel build dev:*",
-    "server" : "npm run build&&node server/index.js"
+    "ssr": "node server/index.js"
   },
   "eslintConfig": {
     "extends": [
