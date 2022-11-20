@@ -3,11 +3,12 @@ import { GoogleIcon } from "./ProviderIcons";
 
 import { Icon } from "@chakra-ui/react";
 
-import { BsFacebook } from "react-icons/bs";
+import { BsFacebook } from "react-icons/bs";//FcGoogle
+import { FcGoogle } from "react-icons/fc";//FcGoogle
 const providers = [
   {
     name: "Google",
-    icon: <GoogleIcon boxSize="5" />,
+    icon: <Icon as={FcGoogle} boxSize="5" color={"#3b5998"} />,
   },
    {
     name: "Facebook",
