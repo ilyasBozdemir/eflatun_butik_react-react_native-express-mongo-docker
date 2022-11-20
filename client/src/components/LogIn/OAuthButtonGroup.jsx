@@ -1,6 +1,4 @@
 import { Button, ButtonGroup, VisuallyHidden } from "@chakra-ui/react";
-import { GoogleIcon } from "./ProviderIcons";
-
 import { Icon } from "@chakra-ui/react";
 
 import { BsFacebook } from "react-icons/bs";//FcGoogle
