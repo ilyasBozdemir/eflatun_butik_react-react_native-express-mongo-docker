@@ -1,15 +1,17 @@
-
 import Layout from "./Layout";
 import Footer from "./components/Footer";
-import Router from './Router'
-
+import Router from "./Router";
+import { Provider } from "react-redux";
+import  store  from "./Store";
 function App() {
   return (
     <>
-      <Layout>
-        <Router />
-        <Footer />
-      </Layout>
+      <Provider store={store}>
+        <Layout>
+          <Router />
+          <Footer />
+        </Layout>
+      </Provider>
     </>
   );
 }

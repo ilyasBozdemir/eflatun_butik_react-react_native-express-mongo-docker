@@ -1,24 +1,17 @@
 import React from "react";
 import {
-  HStack,
   Flex,
   Spacer,
   Box,
   Heading,
   ButtonGroup,
   Button,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  useColorModeValue as UseColorModeValue,
   useDisclosure as UseDisclosure,
   Icon,
 } from "@chakra-ui/react";
 
 import Logo from "../Logo";
 
-import { AiOutlineUser } from "react-icons/ai";
 import { MdFavorite, MdOutlineFavoriteBorder } from "react-icons/md";
 
 import { MdOutlineShoppingCart, MdShoppingCart } from "react-icons/md";
@@ -27,10 +20,9 @@ import SearchBox from "./SearchBox";
 
 import { Link } from "react-router-dom";
 
-import { ChevronDownIcon, ChevronUpIcon } from "@chakra-ui/icons";
-
+import UserMenu from './UserMenu'
 function HeaderBrand() {
-  const userRef = React.useRef();
+
   const { isOpen, onOpen, onClose } = UseDisclosure();
   const [isFavoriShown, setIsFavoriShown] = React.useState(false);
   const [shoppingCartisShown, setShoppingCartIsShown] = React.useState(false);
@@ -53,34 +45,7 @@ function HeaderBrand() {
         <Spacer />
 
         <ButtonGroup>
-          <Menu isOpen={isOpen}>
-            <MenuButton
-              ref={userRef}
-              mx={1}
-              py={[1, 2, 2]}
-              px={4}
-              borderRadius={5}
-              _hover={{ bg: UseColorModeValue("gray.100", "gray.700") }}
-              aria-label={"user button"}
-              fontWeight="normal"
-              onMouseEnter={onOpen}
-              onMouseLeave={onClose}
-            >
-              <HStack>
-                <Icon as={AiOutlineUser} fontSize={25} />
-                {isOpen ? <ChevronUpIcon /> : <ChevronDownIcon />}
-              </HStack>
-            </MenuButton>
-
-            <MenuList onMouseEnter={onOpen} onMouseLeave={onClose}>
-              <Link to="/giris">
-                <MenuItem>Giriş Yap</MenuItem>
-              </Link>
-              <Link to="/uyelik">
-                <MenuItem>Üye Ol</MenuItem>
-              </Link>
-            </MenuList>
-          </Menu>
+          <UserMenu  isOpen={isOpen} onOpen={onOpen} onClose={onClose} />
 
           <Button
             bg={"transparent"}

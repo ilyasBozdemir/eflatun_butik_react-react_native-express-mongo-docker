@@ -1,11 +1,21 @@
 {
-  "name": "eflatun_butik_backend",
+  "name": "backend",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
   },
-  "author": "İlyas Bozdemir",
-  "license": "ISC"
+  "author": "Ilyas Bozdemir (https://eftatunbutik.com.com/)",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/server": "^4.1.1",
+    "express": "^4.18.2",
+    "express-fileupload": "^1.4.0",
+    "graphql": "^16.6.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^6.7.2",
+    "nodemon": "^2.0.20"
+  }
 }
